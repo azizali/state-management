@@ -1,19 +1,33 @@
+import { useEffect } from 'react'
 import './App.css';
+import Header from './components/Header';
 import Controls from './components/Counter/Controls'
 import View from './components/Counter/View'
+import User from './components/User';
 import useStore from './components/Counter/store'
 
 function App() {
-  const state = useStore(state=> state)
-  console.log(state)
+  const {
+    increment,
+    decrement,
+    count
+  } = useStore(({ increment, decrement, count }) => ({ increment, decrement, count }))
+
+  useEffect(()=>{
+    console.log(increment, decrement, useStore)
+  }, [increment, decrement])
   return (
-    <div className="App">
-      <Controls
-        incrementCb={state.increment}
-        decrementCb={state.decrement}
-      />
-      <View value={state.count} />
-    </div>
+    <>
+      <Header />
+      <div className="flex">
+        <User />
+        <Controls
+          incrementCb={increment}
+          decrementCb={decrement}
+        />
+        <View value={count} />
+      </div>
+    </>
   );
 }
 

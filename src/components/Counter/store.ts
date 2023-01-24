@@ -1,5 +1,4 @@
 import { create } from 'zustand'
-
 interface StateX {
   count: number
   increment: ()=> void
@@ -14,7 +13,7 @@ export default create<StateX>()(set => {
         count: state?.count + 1
       }
     }),
-    decrement: ()=> set((state) => {
+    decrement: () => set((state) => {
       return {
         count: state?.count - 1
       }
