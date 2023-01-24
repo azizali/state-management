@@ -11,8 +11,8 @@ export default function Controls({
 }: PropTypes) {
   return (
     <Section>
-      <button onClick={incrementCb}>Increment</button>
-      <button onClick={decrementCb}>Decrement</button>
+      <button className="border-2 p-1 rounded" onClick={incrementCb}>Increment</button>
+      <button className="border-2 p-1 rounded" onClick={decrementCb}>Decrement</button>
     </Section>
   );
 }
