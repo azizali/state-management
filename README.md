@@ -16,3 +16,4 @@
 | Store Updated                   | Action Creators | Via direct update functions
 | Store location                  | React Context   | React External Store
 | Who can access Store            | Children Component of `<Provider>`  | Any component, No `<Provider>` needed
+# state-management
